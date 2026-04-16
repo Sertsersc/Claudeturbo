@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#0D0D1A" android:pathData="M0,0h108v108h-108z"/>
+    <!-- Gövde -->
+    <path android:fillColor="#7C3AED" android:pathData="M28,38 Q28,26 40,26 L68,26 Q80,26 80,38 L80,66 Q80,78 68,78 L40,78 Q28,78 28,66 Z"/>
+    <!-- Göz sol -->
+    <circle android:fillColor="#0D0D1A" android:cx="43" android:cy="50" android:r="7"/>
+    <circle android:fillColor="#A855F7" android:cx="43" android:cy="50" android:r="4"/>
+    <circle android:fillColor="#FFFFFF" android:cx="45" android:cy="48" android:r="1.5"/>
+    <!-- Göz sağ -->
+    <circle android:fillColor="#0D0D1A" android:cx="65" android:cy="50" android:r="7"/>
+    <circle android:fillColor="#A855F7" android:cx="65" android:cy="50" android:r="4"/>
+    <circle android:fillColor="#FFFFFF" android:cx="67" android:cy="48" android:r="1.5"/>
+    <!-- Ağız -->
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="2.5" android:fillColor="#00000000"
+        android:pathData="M43,63 Q54,70 65,63"/>
+    <!-- Anten -->
+    <path android:strokeColor="#A855F7" android:strokeWidth="3" android:pathData="M54,26 L54,16"/>
+    <circle android:fillColor="#06B6D4" android:cx="54" android:cy="13" android:r="4"/>
+    <!-- Kulaklar -->
+    <rect android:fillColor="#6D28D9" android:x="20" android:y="44" android:width="8" android:height="14" android:rx="4"/>
+    <rect android:fillColor="#6D28D9" android:x="80" android:y="44" android:width="8" android:height="14" android:rx="4"/>
+    <!-- Bacaklar -->
+    <rect android:fillColor="#6D28D9" android:x="37" android:y="78" android:width="13" android:height="14" android:rx="4"/>
+    <rect android:fillColor="#6D28D9" android:x="58" android:y="78" android:width="13" android:height="14" android:rx="4"/>
+    <!-- Göğüs ışığı -->
+    <circle android:fillColor="#06B6D4" android:cx="54" android:cy="65" android:r="3"/>
+</vector>

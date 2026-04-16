@@ -1,0 +1,38 @@
+name: Build Turbo AI APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4  # v3'ten v4'e güncellendi
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4 # v3'ten v4'e güncellendi
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'gradle' # Build hızını artırır
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3 # v2'den v3'e güncellendi
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Build Debug APK
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4 # v3'ten v4'e güncellendi
+        with:
+          name: TurboAI-v2
+          path: app/build/outputs/apk/debug/app-debug.apk
+

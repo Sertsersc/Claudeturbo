@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Turbo AI</string>
+    <string name="accessibility_description">Turbo AI, uygulamalar arası geçiş ve sistem kontrolü için erişilebilirlik hizmetine ihtiyaç duyar.</string>
+</resources>

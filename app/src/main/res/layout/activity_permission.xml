@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D1A">
+
+    <!-- İllüstrasyon alanı (üst yarı) -->
+    <FrameLayout
+        android:id="@+id/illustrationArea"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_glow"
+        android:alpha="0.15"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.45"
+        app:layout_constraintBottom_toTopOf="@id/contentCard"/>
+
+    <TextView
+        android:id="@+id/permIcon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="🎙️"
+        android:textSize="64sp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/contentCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Alt kart -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/contentCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        app:cardBackgroundColor="#1A1A2E"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+            <!-- Adım göstergesi -->
+            <LinearLayout
+                android:id="@+id/dotContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/permTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mikrofon İzni"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:fontFamily="sans-serif-bold"
+                android:textAlignment="center"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/permDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Turbo seni duyabilmek için mikrofon iznine ihtiyaç duyuyor."
+                android:textColor="#9CA3AF"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- İzin durumu -->
+            <TextView
+                android:id="@+id/permStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#10B981"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"/>
+
+            <!-- Sonraki butonu -->
+            <Button
+                android:id="@+id/nextBtn"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="İzin Ver"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:background="@drawable/bg_button_purple"
+                android:enabled="true"/>
+
+            <!-- Atla -->
+            <TextView
+                android:id="@+id/skipBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Atla"
+                android:textColor="#9CA3AF"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:padding="16dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

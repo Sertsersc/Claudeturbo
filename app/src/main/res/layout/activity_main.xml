@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D1A">
+
+    <!-- Üst başlık -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_launcher"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/greetingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Merhaba, Barış!"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-bold"/>
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="● Hazır"
+                android:textColor="#10B981"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Ses dalgası / robot animasyon alanı -->
+    <FrameLayout
+        android:id="@+id/waveArea"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_card"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/waveIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🤖"
+            android:textSize="56sp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/listenLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mikrofona bas ve konuş"
+            android:textColor="#9CA3AF"
+            android:textSize="13sp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="12dp"/>
+    </FrameLayout>
+
+    <!-- Hızlı butonlar -->
+    <LinearLayout
+        android:id="@+id/quickBtns"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/waveArea"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/btnChat"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_card"
+            android:layout_marginEnd="8dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💬" android:textSize="24sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Yazarak" android:textColor="#9CA3AF" android:textSize="11sp" android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnVoice"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_card"
+            android:layout_marginStart="8dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🎙️" android:textSize="24sp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sesle" android:textColor="#9CA3AF" android:textSize="11sp" android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Sohbet geçmişi -->
+    <ScrollView
+        android:id="@+id/chatScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/quickBtns"
+        app:layout_constraintBottom_toTopOf="@id/inputArea"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/chatContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="4dp"/>
+
+    </ScrollView>
+
+    <!-- Alt giriş alanı -->
+    <LinearLayout
+        android:id="@+id/inputArea"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:background="#1A1A2E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInput"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:hint="Bir şeyler yaz..."
+            android:textColor="#FFFFFF"
+            android:textColorHint="#9CA3AF"
+            android:textSize="14sp"
+            android:background="@drawable/bg_card"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:inputType="text"
+            android:imeOptions="actionSend"
+            android:maxLines="1"/>
+
+        <!-- Mikrofon butonu -->
+        <ImageButton
+            android:id="@+id/micButton"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:background="@drawable/bg_mic"
+            android:padding="12dp"
+            android:layout_marginStart="10dp"
+            android:tint="#FFFFFF"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
